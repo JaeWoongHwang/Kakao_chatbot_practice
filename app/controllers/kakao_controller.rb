@@ -29,6 +29,8 @@ class KakaoController < ApplicationController
       elsif user_message == "푸쉬업"
       url = "https://youtu.be/Nsu_xA02ieU"
       return_url = url
+      elsif user_message == "처음으로"
+      keyboard = basic_keyboard
     end
    when "어깨"
      keyboard = {type: "buttons", buttons: ["덤벨숄더프레스", "사이드레터럴레이즈", "벤트오버레이즈", "업라이트로우", "처음으로"]}
@@ -44,6 +46,8 @@ class KakaoController < ApplicationController
       elsif user_message == "업라이트로우"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
+      elsif user_message == "처음으로"
+      keyboard = basic_keyboard
       end
    when "등"
      keyboard = {type: "buttons", buttons: ["풀업", "랫풀다운", "바벨로우", "케이블풀오버", "처음으로"]}
@@ -59,6 +63,8 @@ class KakaoController < ApplicationController
      elsif user_message == "케이블풀오버"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
+     elsif user_message == "처음으로"
+      keyboard = basic_keyboard  
      end
    when "팔"
      keyboard = {type: "buttons", buttons: ["이두", "삼두", "처음으로"]}
@@ -73,6 +79,8 @@ class KakaoController < ApplicationController
        elsif user_message == "케이블컬"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
+       elsif user_message == "처음으로"
+        keyboard = basic_keyboard
       end
      elsif user_message == "삼두"
        keyboard = {type: "buttons", buttons: ["케이블프레스다운", "딥스", "라잉익스텐션", "처음으로"]}
@@ -85,6 +93,8 @@ class KakaoController < ApplicationController
        elsif user_message == "라잉익스텐션"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
+       elsif user_message == "처음으로"
+        keyboard = basic_keyboard
       end
     end
    when "하체"
@@ -98,6 +108,8 @@ class KakaoController < ApplicationController
       elsif user_message == "레그익스텐션"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
+      elsif user_message == "처음으로"
+        keyboard = basic_keyboard  
       end  
   end
     
@@ -115,3 +127,4 @@ class KakaoController < ApplicationController
       render json: return_message
   end
 end
+
