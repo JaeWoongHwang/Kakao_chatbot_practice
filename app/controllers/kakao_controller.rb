@@ -1,9 +1,6 @@
 class KakaoController < ApplicationController
   def keyboard
-    keyboard = {
-    type: "buttons",
-    buttons: ["가슴", "어깨", "등", "팔", "하체"]
-    }
+    keyboard = {type: "buttons", buttons: ["가슴", "어깨", "등", "팔", "하체"]}
     render json: keyboard
   end
 
@@ -11,7 +8,6 @@ class KakaoController < ApplicationController
     home_keyboard = { type: "buttons", buttons: ["처음으로"]}
     basic_keyboard = { type: "buttons", buttons: ["가슴", "어깨", "등", "팔", "하체"]}
     user_message = params[:content]
-  
   
    if user_message == "가슴"
      keyboard = {type: "buttons", buttons: ["벤치프레스", "인클라인프레스", "케이블크로스오버", "푸쉬업", "처음으로"]}
@@ -118,10 +114,8 @@ class KakaoController < ApplicationController
             url: return_url
            }
           },
-      keyboard: home_keyboard
+      keyboard: keyboard
     }
     render json: return_message
   end
 end
-
-
