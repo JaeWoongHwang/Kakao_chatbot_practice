@@ -9,27 +9,35 @@ class WorkoutController < ApplicationController
 
   def message
     user_message = params[:content]
-    to_home_keyboard = {type: "buttons", buttons: ["Home"]}
-    standard_keyboard = {type: "buttons", buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower"]}
-    
-    case user_message
-    when "Home"
-     home_keyboard = standard_keyboard    
-    when "Chest"
-     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-    when "Back"
-     home_keyboard = {type: "buttons", buttons: ["Pull up", "Lat pull down"]}
-    when "Shoulder"    
-     home_keyboard = {type: "buttons", buttons: ["Shoulder Press", "Side lateral raise"]}
-    when "Arms"
-     home_keyboard = {type: "buttons", buttons: ["Dumbbell curl", "Barbell curl"]}
-    when "Lower"    
-     home_keyboard = {type: "buttons", buttons: ["Squats", "Lunge"]}
+    return_text = "Test"
+    if user_message == "Chest"
+     home_keyboard = chest_keyboard
+      if user_message == "Bench Press"
+        url = "https://youtu.be/KyQiUIBvutI"
+        return_url = url
+      elsif user_message == "Push up"
+        url = "https://youtu.be/KyQiUIBvutI"
+        return_url = url
+      end
+    elsif user_message == "Back"
+      url = "https://youtu.be/MJerfdJzki4"
+      return_url = url
+    elsif user_message == "Shoulder"
+      url = "https://youtu.be/mOp2D0cvUxM"
+      return_url = url
+    elsif user_message == "Arms"
+      url = "https://youtu.be/ARGOv5eQk50"
+      return_url = url
+    elsif user_message == "Lower"
+      url = "https://youtu.be/oCwiMnnhiX8"
+      return_url = url
+    else
+      return_text = "Please choose this list"
     end
     
     home_keyboard = {
       type: "buttons",
-      buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower", "Home"]
+      buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower"]
     }
 
     return_message = {
