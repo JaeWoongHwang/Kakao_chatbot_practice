@@ -17,55 +17,15 @@ class WorkoutController < ApplicationController
      home_keyboard = standard_keyboard    
     when "Chest"
      home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     elsif user_message == "Push up"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     end
     when "Back"
-     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     elsif user_message == "Push up"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     end    
+     home_keyboard = {type: "buttons", buttons: ["Pull up", "Lat pull down"]}
     when "Shoulder"    
-     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     elsif user_message == "Push up"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     end
+     home_keyboard = {type: "buttons", buttons: ["Shoulder Press", "Side lateral raise"]}
     when "Arms"
-     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     elsif user_message == "Push up"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     end    
+     home_keyboard = {type: "buttons", buttons: ["Dumbbell curl", "Barbell curl"]}
     when "Lower"    
-     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     elsif user_message == "Push up"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-     end 
+     home_keyboard = {type: "buttons", buttons: ["Squats", "Lunge"]}
     end
-    
-    home_keyboard = {
-      type: "buttons",
-      buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower", "Home"]
-    }
 
     return_message = {
       message: {
