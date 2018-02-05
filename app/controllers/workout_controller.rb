@@ -2,44 +2,49 @@ class WorkoutController < ApplicationController
  def keyboard
     home_keyboard = {
     type: "buttons",
-    buttons: ["벤치프레스", "데드리프트", "레터럴레이즈", "스쿼트", "런지"]
+    buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower"]
     }
     render json: home_keyboard
-  end
+ end
 
   def message
     user_message = params[:content]
 
     return_text = "테스트"
-    if user_message == "벤치프레스"
-      url = "https://youtu.be/KyQiUIBvutI"
-      return_url = url
-    elsif user_message == "데드리프트"
+    if user_message == "Chest"
+     chest_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     case chest_keyboard
+       when "Bench Press"
+        url = "https://youtu.be/KyQiUIBvutI"
+        return_url = url
+     end
+      
+    elsif user_message == "Back"
       url = "https://youtu.be/MJerfdJzki4"
       return_url = url
-    elsif user_message == "레터럴레이즈"
+    elsif user_message == "Shoulder"
       url = "https://youtu.be/mOp2D0cvUxM"
       return_url = url
-    elsif user_message == "스쿼트"
+    elsif user_message == "Arms"
       url = "https://youtu.be/ARGOv5eQk50"
       return_url = url
-    elsif user_message == "런지"
+    elsif user_message == "Lower"
       url = "https://youtu.be/oCwiMnnhiX8"
       return_url = url
     else
-      return_text = "현재 볼 수 있는 운동 동작은 벤치프레스, 데드리프트, 레터럴레이즈, 스쿼트, 런지 입니다."
+      return_text = "Please choose this list"
     end
 
     home_keyboard = {
       type: "buttons",
-      buttons: ["벤치프레스", "데드리프트", "레터럴레이즈", "스쿼트", "런지"]
+      buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower", "Home"]
     }
 
     return_message = {
       message: {
           text: user_message,
           message_button: {
-            label: user_message + " " + "자세 영상",
+            label: user_message + " " + "workout footage",
             url: return_url
           }
           },
