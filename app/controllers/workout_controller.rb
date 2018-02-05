@@ -26,6 +26,11 @@ class WorkoutController < ApplicationController
     when "Lower"    
      home_keyboard = {type: "buttons", buttons: ["Squats", "Lunge"]}
     end
+    
+    home_keyboard = {
+      type: "buttons",
+      buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower", "Home"]
+    }
 
     return_message = {
       message: {
