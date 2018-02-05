@@ -9,16 +9,17 @@ class WorkoutController < ApplicationController
 
   def message
     user_message = params[:content]
-
+    chest_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
     return_text = "테스트"
     if user_message == "Chest"
-     chest_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
-     case chest_keyboard
-       when "Bench Press"
+     return_button = chest_keyboard
+      if user_message == "Bench Press"
         url = "https://youtu.be/KyQiUIBvutI"
         return_url = url
-     end
-      
+      else
+        url = "https://youtu.be/KyQiUIBvutI"
+        return_url = url
+      end
     elsif user_message == "Back"
       url = "https://youtu.be/MJerfdJzki4"
       return_url = url
