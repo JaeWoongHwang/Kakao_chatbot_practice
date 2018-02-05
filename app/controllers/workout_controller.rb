@@ -9,33 +9,59 @@ class WorkoutController < ApplicationController
 
   def message
     user_message = params[:content]
-    chest_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+    to_home_keyboard = {type: "buttons", buttons: ["Home"]}
+    standard_keyboard = {type: "buttons", buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower"]}
     
-    if user_message == "Chest"
-     home_keyboard = chest_keyboard
-      if user_message == "Bench Press"
-        url = "https://youtu.be/KyQiUIBvutI"
-        return_url = url
-      elsif user_message == "Push up"
-        url = "https://youtu.be/KyQiUIBvutI"
-        return_url = url
-      end
-    elsif user_message == "Back"
-      url = "https://youtu.be/MJerfdJzki4"
+    case user_message
+    when "Home"
+     home_keyboard = standard_keyboard    
+    when "Chest"
+     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     if user_message == "Bench Press"
+      url = "https://youtu.be/KyQiUIBvutI"
       return_url = url
-    elsif user_message == "Shoulder"
-      url = "https://youtu.be/mOp2D0cvUxM"
+     elsif user_message == "Push up"
+      url = "https://youtu.be/KyQiUIBvutI"
       return_url = url
-    elsif user_message == "Arms"
-      url = "https://youtu.be/ARGOv5eQk50"
+     end
+    when "Back"
+     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     if user_message == "Bench Press"
+      url = "https://youtu.be/KyQiUIBvutI"
       return_url = url
-    elsif user_message == "Lower"
-      url = "https://youtu.be/oCwiMnnhiX8"
+     elsif user_message == "Push up"
+      url = "https://youtu.be/KyQiUIBvutI"
       return_url = url
-    else
-      return_text = "Please choose this list"
+     end    
+    when "Shoulder"    
+     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     if user_message == "Bench Press"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     elsif user_message == "Push up"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     end
+    when "Arms"
+     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     if user_message == "Bench Press"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     elsif user_message == "Push up"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     end    
+    when "Lower"    
+     home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push up"]}
+     if user_message == "Bench Press"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     elsif user_message == "Push up"
+      url = "https://youtu.be/KyQiUIBvutI"
+      return_url = url
+     end 
     end
-
+    
     home_keyboard = {
       type: "buttons",
       buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower", "Home"]
