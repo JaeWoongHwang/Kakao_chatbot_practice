@@ -12,13 +12,6 @@ class WorkoutController < ApplicationController
     return_text = "Test"
     if user_message == "Chest"
      home_keyboard = {type: "buttons", buttons: ["Bench Press", "Push Up"]}
-     if user_message == "Bench Press"
-      url = "https://youtu.be/MJerfdJzki4"
-      return_url = url     
-      elsif user_message == "Push Up"
-      url = "https://youtu.be/MJerfdJzki4"
-      return_url = url
-     end       
     elsif user_message == "Back"
       url = "https://youtu.be/MJerfdJzki4"
       return_url = url
@@ -35,6 +28,14 @@ class WorkoutController < ApplicationController
       return_text = "Please choose this list"
     end
     
+      if user_message == "Bench Press"
+      url = "https://youtu.be/MJerfdJzki4"
+      return_url = url     
+      elsif user_message == "Push Up"
+      url = "https://youtu.be/MJerfdJzki4"
+      return_url = url
+      end  
+      
     home_keyboard = {
       type: "buttons",
       buttons: ["Chest", "Back", "Shoulder", "Arms", "Lower"]
